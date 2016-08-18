@@ -1,0 +1,24 @@
+<h1>Editing Product</h1>
+<form action='/products/<%= @product.id%>'  method='post'>
+	<input type='hidden' name='_method' value='patch'>
+	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	<select name='product[category]'>
+		<option value='Electronics'>Electronics</option>
+		<option value='Household'>Household</option>
+		<option value='Gardening'>Gardening</option>
+		<option value='Automotive'>Automotive</option>
+		<option value='Ninjas'>Ninjas</option>
+
+	</select><br>
+
+	Name <input type='text' name='product[name]' value='<%= @product.name%>'><br>
+	Description <input type='text' name='product[description]' value='<%= @product.description%>'><br>
+	Price <input type='number' name='product[pricing]' value='<%= @product.pricing%>'><br>
+	<input type='submit' value='Update'><br>
+
+</form>
+<h2><a href="/products/<%=@product.id%>">Show</a></h2>
+
+
+<h2><a href="/">Back</a></h2>
+
